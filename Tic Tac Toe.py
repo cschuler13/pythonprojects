@@ -26,15 +26,16 @@ def disp_board():
     
 def winning_condition():
     ###Establishes a tic-tac-toe###
-    for z in range(0,9):
-        if mylist[0]==mylist[4]==mylist[8] or mylist[2]==mylist[4]==mylist[6]:
-            return True 
-        elif mylist[z]==mylist[z+1]==mylist[z+2]:
-            return True
-        elif mylist[z]==mylist[z+3]==mylist[z+6]:
-            return True
+    for z in range(0,7):
+        if mylist[0]==mylist[4]==mylist[8] or mylist[2]==mylist[4]==mylist[6]: 
+            return True ###Diagonal###
+        elif mylist[0]==mylist[1]==mylist[2] or mylist[3]==mylist[4]==mylist[5] or mylist[6]==mylist[7]==mylist[8]:
+            return True ###Horizontal###
+        elif mylist[0]==mylist[3]==mylist[6] or mylist[1]==mylist[4]==mylist[7] or mylist[2]==mylist[5]==mylist[8]:
+            return True ###Vertical###
         else:
-            return False
+            pass
+    return False
         
 def turns():
     for y in range(1,11):
